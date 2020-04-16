@@ -1,0 +1,36 @@
+//mixin and variales
+@import "../../foundation/mixin/**";
+@import "../../foundation/var/**";
+
+@import "./**";
+
+.selectSubject{
+  li{
+    float: left;
+    width: 212px;
+    height: 275px;
+  }
+}
+
+.ttl__highscore{
+  position: relative;
+  height: 154px;
+  background: #fff;
+
+  .txt{
+    text-align: center;
+    @include fontsize(20);
+    font-weight: bold;
+    padding-top: 16px;
+  }
+
+  .num{
+    line-height: 1;
+    display: block;
+    text-align: center;
+    @include fontsize(90);
+    font-family: Helvetica,sans-serif;
+    color: #FF7D7D;
+  }
+}
+

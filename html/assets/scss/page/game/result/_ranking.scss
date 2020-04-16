@@ -1,0 +1,36 @@
+.ranking{
+  float: left;
+  width: 364px;
+  margin: -2px 0 0 -2px;
+
+  &__ttl{
+    @include fontsize(20);
+    font-weight: bold;
+    margin-top: -10px;
+  }
+}
+
+
+.ranking__scorelist-item{
+  position: relative;
+  width: 180px;
+  float: left;
+  height: 64px;
+  margin: 2px 0 0 2px;
+  background: url(#{$rootDir}/assets/img/game/result/ranking_bg.png)no-repeat;
+  background-color: #FFD4E6;
+
+  .number{
+    @include fontsize(24);
+    text-align: center;
+    font-weight: bold;
+    font-family: Helvetica,sans-serif;
+    padding-top: 16px;
+    line-height: 1;
+  }
+
+  .id{
+    @include fontsize(11);
+    text-align: center;
+  }
+}

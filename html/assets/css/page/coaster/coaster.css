@@ -1,0 +1,1066 @@
+body {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.anki_coaster {
+  float: left;
+  width: 1062px;
+  padding: 0 0 0 30px;
+}
+
+.anki_coaster .yakudachi {
+  width: 100%;
+  height: 260px;
+  overflow: hidden;
+  margin: 0 0 33px;
+  position: relative;
+}
+
+.anki_coaster .yakudachi:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url(../../../img/coaster/bg_yakudachi.png) 0 0;
+  width: 1233px;
+  height: 100%;
+  -webkit-animation: omoshiro_bg 200s linear infinite;
+          animation: omoshiro_bg 200s linear infinite;
+}
+
+.anki_coaster .yakudachi__go {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  -webkit-transform: translateY(-50%) rotate(-20deg);
+      -ms-transform: translateY(-50%) rotate(-20deg);
+          transform: translateY(-50%) rotate(-20deg);
+  -webkit-transform-origin: center;
+      -ms-transform-origin: center;
+          transform-origin: center;
+  z-index: 3;
+  -webkit-animation: arrow_in_y 1s cubic-bezier(0, 0, 0.1, 1) 1;
+          animation: arrow_in_y 1s cubic-bezier(0, 0, 0.1, 1) 1;
+}
+
+.anki_coaster .yakudachi__go.is-start {
+  -webkit-animation: go 1.2s ease 1 forwards;
+          animation: go 1.2s ease 1 forwards;
+}
+
+.anki_coaster .yakudachi__btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #fff;
+  font-family: 'Play', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  font-size: 0.875rem;
+  white-space: nowrap;
+  z-index: 3;
+}
+
+.anki_coaster .yakudachi__btn li {
+  width: 80px;
+  height: 30px;
+  padding: 0 10px;
+  line-height: 30px;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 3px;
+}
+
+.anki_coaster .yakudachi__btn__start {
+  position: absolute;
+  top: 0;
+  right: 0;
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  display: none;
+}
+
+.anki_coaster .yakudachi__btn__start.is-show {
+  opacity: 1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  display: block;
+}
+
+.anki_coaster .yakudachi__btn__start i {
+  padding: 0 5px 0 0;
+}
+
+.anki_coaster .yakudachi__btn__stop {
+  position: absolute;
+  top: 0;
+  right: 0;
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  display: none;
+}
+
+.anki_coaster .yakudachi__btn__stop.is-show {
+  opacity: 1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  display: block;
+}
+
+.anki_coaster .yakudachi__btn__stop i {
+  padding: 0 5px 0 0;
+}
+
+.anki_coaster .yakudachi__inner {
+  height: 280px;
+  overflow: hidden;
+}
+
+.anki_coaster .yakudachi__inner.is-scroll {
+  overflow: scroll;
+}
+
+.anki_coaster .yakudachi .coaster {
+  height: 100%;
+}
+
+.anki_coaster .yakudachi .coaster__inner {
+  z-index: 1;
+  position: relative;
+  height: 100%;
+  float: left;
+}
+
+.anki_coaster .yakudachi .coaster__ttl {
+  width: 252px;
+  height: 100%;
+  float: left;
+  position: relative;
+}
+
+.anki_coaster .yakudachi .coaster__ttl:before {
+  content: "";
+  width: 252px;
+  height: 137px;
+  background: url(../../../img/coaster/yakudachi_ico.png) 0 0 no-repeat;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transform-origin: top;
+      -ms-transform-origin: top;
+          transform-origin: top;
+  -webkit-animation: kanban 1s ease 1;
+          animation: kanban 1s ease 1;
+}
+
+.anki_coaster .yakudachi .coaster__list {
+  width: 845px;
+  height: 100%;
+  float: left;
+  position: relative;
+  background: url(../../../img/coaster/bg_yakudachi_course.png) 0 0 no-repeat;
+}
+
+.anki_coaster .yakudachi .coaster__list__item {
+  display: inline-block;
+  font-size: 14px;
+  font-size: 0.875rem;
+  font-weight: bold;
+  line-height: 20px;
+  text-align: center;
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+}
+
+.anki_coaster .yakudachi .coaster__list__item.is-show {
+  opacity: 1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  -webkit-animation: bounce .4s ease-out 1;
+          animation: bounce .4s ease-out 1;
+}
+
+.anki_coaster .yakudachi .coaster__list__item a {
+  display: inline-block;
+  position: relative;
+}
+
+.anki_coaster .yakudachi .coaster__list__item a span {
+  position: relative;
+  z-index: 1;
+}
+
+.anki_coaster .yakudachi .coaster__list__item a:after {
+  content: "";
+  display: block;
+  border-radius: 10000px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+}
+
+.anki_coaster .yakudachi .coaster__list__item a.is-s_s:after {
+  width: 60px;
+  height: 60px;
+}
+
+.anki_coaster .yakudachi .coaster__list__item a.is-s_m:after {
+  width: 80px;
+  height: 80px;
+}
+
+.anki_coaster .yakudachi .coaster__list__item a.is-s_l:after {
+  width: 100px;
+  height: 100px;
+}
+
+.anki_coaster .yakudachi .coaster__list__item a.is-s_x:after {
+  width: 120px;
+  height: 120px;
+}
+
+.anki_coaster .yakudachi .coaster__list__item a.is-c_red:after {
+  border: 3px solid #F27070;
+  background: #FC9F9A;
+}
+
+.anki_coaster .yakudachi .coaster__list__item a.is-c_yellow:after {
+  border: 3px solid #DDCB45;
+  background: #FFF97D;
+}
+
+.anki_coaster .yakudachi .coaster__list__item a.is-c_orange:after {
+  border: 3px solid #EAAC59;
+  background: #FFD399;
+}
+
+.anki_coaster .yakudachi .coaster__list__item a.is-c_green:after {
+  border: 3px solid #64D25A;
+  background: #AEFAA0;
+}
+
+.anki_coaster .yakudachi .coaster__list__item a.is-c_blue:after {
+  border: 3px solid #42B9EA;
+  background: #92EAFF;
+}
+
+.anki_coaster .yakudachi .coaster__list__item a.is-c_purple:after {
+  border: 3px solid #9F90D6;
+  background: #CEBAFB;
+}
+
+.anki_coaster .yakudachi .coaster__list--item01 {
+  position: absolute;
+  top: 110px;
+  left: 65px;
+}
+
+.anki_coaster .yakudachi .coaster__list--item01 .is-s_m {
+  -webkit-transform: translate(-3px, -12px);
+      -ms-transform: translate(-3px, -12px);
+          transform: translate(-3px, -12px);
+}
+
+.anki_coaster .yakudachi .coaster__list--item01 .is-s_l {
+  -webkit-transform: translate(-12px, -18px);
+      -ms-transform: translate(-12px, -18px);
+          transform: translate(-12px, -18px);
+}
+
+.anki_coaster .yakudachi .coaster__list--item01 .is-s_x {
+  -webkit-transform: translate(-20px, -22px);
+      -ms-transform: translate(-20px, -22px);
+          transform: translate(-20px, -22px);
+}
+
+.anki_coaster .yakudachi .coaster__list--item02 {
+  position: absolute;
+  top: 35px;
+  left: 245px;
+}
+
+.anki_coaster .yakudachi .coaster__list--item02 .is-s_m {
+  -webkit-transform: translate(3px, -10px);
+      -ms-transform: translate(3px, -10px);
+          transform: translate(3px, -10px);
+}
+
+.anki_coaster .yakudachi .coaster__list--item02 .is-s_l {
+  -webkit-transform: translate(1px, -19px);
+      -ms-transform: translate(1px, -19px);
+          transform: translate(1px, -19px);
+}
+
+.anki_coaster .yakudachi .coaster__list--item02 .is-s_x {
+  -webkit-transform: translate(8px, -28px);
+      -ms-transform: translate(8px, -28px);
+          transform: translate(8px, -28px);
+}
+
+.anki_coaster .yakudachi .coaster__list--item03 {
+  position: absolute;
+  top: 110px;
+  left: 385px;
+}
+
+.anki_coaster .yakudachi .coaster__list--item03 .is-s_m {
+  -webkit-transform: translate(9px, -4px);
+      -ms-transform: translate(9px, -4px);
+          transform: translate(9px, -4px);
+}
+
+.anki_coaster .yakudachi .coaster__list--item03 .is-s_l {
+  -webkit-transform: translate(13px, -16px);
+      -ms-transform: translate(13px, -16px);
+          transform: translate(13px, -16px);
+}
+
+.anki_coaster .yakudachi .coaster__list--item03 .is-s_x {
+  -webkit-transform: translate(20px, -23px);
+      -ms-transform: translate(20px, -23px);
+          transform: translate(20px, -23px);
+}
+
+.anki_coaster .yakudachi .coaster__list--item04 {
+  position: absolute;
+  top: 125px;
+  left: 480px;
+}
+
+.anki_coaster .yakudachi .coaster__list--item04 .is-s_m {
+  -webkit-transform: translate(0px, -15px);
+      -ms-transform: translate(0px, -15px);
+          transform: translate(0px, -15px);
+}
+
+.anki_coaster .yakudachi .coaster__list--item04 .is-s_l {
+  -webkit-transform: translate(-7px, -22px);
+      -ms-transform: translate(-7px, -22px);
+          transform: translate(-7px, -22px);
+}
+
+.anki_coaster .yakudachi .coaster__list--item04 .is-s_x {
+  -webkit-transform: translate(-14px, -31px);
+      -ms-transform: translate(-14px, -31px);
+          transform: translate(-14px, -31px);
+}
+
+.anki_coaster .yakudachi .coaster__list--item05 {
+  position: absolute;
+  top: 87px;
+  left: 648px;
+}
+
+.anki_coaster .yakudachi .coaster__list--item05 .is-s_m {
+  -webkit-transform: translate(3px, -10px);
+      -ms-transform: translate(3px, -10px);
+          transform: translate(3px, -10px);
+}
+
+.anki_coaster .yakudachi .coaster__list--item05 .is-s_l {
+  -webkit-transform: translate(5px, -19px);
+      -ms-transform: translate(5px, -19px);
+          transform: translate(5px, -19px);
+}
+
+.anki_coaster .yakudachi .coaster__list--item05 .is-s_x {
+  -webkit-transform: translate(14px, -28px);
+      -ms-transform: translate(14px, -28px);
+          transform: translate(14px, -28px);
+}
+
+.anki_coaster .yakudachi .coaster__list--item06 {
+  position: absolute;
+  top: 150px;
+  left: 758px;
+}
+
+.anki_coaster .yakudachi .coaster__list--item06 .is-s_m {
+  -webkit-transform: translate(3px, -12px);
+      -ms-transform: translate(3px, -12px);
+          transform: translate(3px, -12px);
+}
+
+.anki_coaster .yakudachi .coaster__list--item06 .is-s_l {
+  -webkit-transform: translate(8px, -21px);
+      -ms-transform: translate(8px, -21px);
+          transform: translate(8px, -21px);
+}
+
+.anki_coaster .yakudachi .coaster__list--item06 .is-s_x {
+  -webkit-transform: translate(15px, -30px);
+      -ms-transform: translate(15px, -30px);
+          transform: translate(15px, -30px);
+}
+
+.anki_coaster .omoshiro {
+  width: 100%;
+  height: 260px;
+  overflow: hidden;
+  position: relative;
+}
+
+.anki_coaster .omoshiro:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url(../../../img/coaster/bg_omoshiro.png) 0 0;
+  width: 2312px;
+  height: 100%;
+  -webkit-animation: omoshiro_bg 200s linear infinite;
+          animation: omoshiro_bg 200s linear infinite;
+}
+
+.anki_coaster .omoshiro__go {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  -webkit-transform: translateY(-50%) rotate(9deg);
+      -ms-transform: translateY(-50%) rotate(9deg);
+          transform: translateY(-50%) rotate(9deg);
+  -webkit-transform-origin: center;
+      -ms-transform-origin: center;
+          transform-origin: center;
+  z-index: 3;
+  -webkit-animation: arrow_in_o 1s cubic-bezier(0, 0, 0.1, 1) 1;
+          animation: arrow_in_o 1s cubic-bezier(0, 0, 0.1, 1) 1;
+}
+
+.anki_coaster .omoshiro__go.is-start {
+  -webkit-animation: go 1.2s ease 1 forwards;
+          animation: go 1.2s ease 1 forwards;
+}
+
+.anki_coaster .omoshiro__btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-family: 'Play', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  font-size: 0.875rem;
+  white-space: nowrap;
+  z-index: 3;
+}
+
+.anki_coaster .omoshiro__btn li {
+  width: 80px;
+  height: 30px;
+  padding: 0 10px;
+  line-height: 30px;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 3px;
+}
+
+.anki_coaster .omoshiro__btn__start {
+  position: absolute;
+  top: 0;
+  right: 0;
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  display: none;
+}
+
+.anki_coaster .omoshiro__btn__start.is-show {
+  opacity: 1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  display: block;
+}
+
+.anki_coaster .omoshiro__btn__start i {
+  padding: 0 5px 0 0;
+}
+
+.anki_coaster .omoshiro__btn__stop {
+  position: absolute;
+  top: 0;
+  right: 0;
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  display: none;
+}
+
+.anki_coaster .omoshiro__btn__stop.is-show {
+  opacity: 1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  display: block;
+}
+
+.anki_coaster .omoshiro__btn__stop i {
+  padding: 0 5px 0 0;
+}
+
+.anki_coaster .omoshiro__inner {
+  height: 280px;
+  overflow: hidden;
+}
+
+.anki_coaster .omoshiro__inner.is-scroll {
+  overflow: scroll;
+}
+
+.anki_coaster .omoshiro .coaster {
+  height: 100%;
+}
+
+.anki_coaster .omoshiro .coaster__inner {
+  z-index: 1;
+  position: relative;
+  height: 100%;
+  float: left;
+}
+
+.anki_coaster .omoshiro .coaster__ttl {
+  width: 252px;
+  height: 100%;
+  float: left;
+  position: relative;
+}
+
+.anki_coaster .omoshiro .coaster__ttl:before {
+  content: "";
+  width: 252px;
+  height: 137px;
+  background: url(../../../img/coaster/omoshiro_ico.png) 0 0 no-repeat;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transform-origin: top;
+      -ms-transform-origin: top;
+          transform-origin: top;
+  -webkit-animation: kanban 1s ease 1;
+          animation: kanban 1s ease 1;
+}
+
+.anki_coaster .omoshiro .coaster__list {
+  width: 845px;
+  height: 100%;
+  float: left;
+  position: relative;
+  background: url(../../../img/coaster/bg_omoshiro_course.png) 0 0 no-repeat;
+}
+
+.anki_coaster .omoshiro .coaster__list__item {
+  display: inline-block;
+  font-size: 14px;
+  font-size: 0.875rem;
+  font-weight: bold;
+  line-height: 20px;
+  text-align: center;
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+}
+
+.anki_coaster .omoshiro .coaster__list__item.is-show {
+  opacity: 1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  -webkit-animation: bounce .4s ease-out 1;
+          animation: bounce .4s ease-out 1;
+}
+
+.anki_coaster .omoshiro .coaster__list__item a {
+  display: inline-block;
+  position: relative;
+}
+
+.anki_coaster .omoshiro .coaster__list__item a span {
+  position: relative;
+  z-index: 1;
+}
+
+.anki_coaster .omoshiro .coaster__list__item a:after {
+  content: "";
+  display: block;
+  border-radius: 10000px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+}
+
+.anki_coaster .omoshiro .coaster__list__item a.is-s_s:after {
+  width: 60px;
+  height: 60px;
+}
+
+.anki_coaster .omoshiro .coaster__list__item a.is-s_m:after {
+  width: 80px;
+  height: 80px;
+}
+
+.anki_coaster .omoshiro .coaster__list__item a.is-s_l:after {
+  width: 100px;
+  height: 100px;
+}
+
+.anki_coaster .omoshiro .coaster__list__item a.is-s_x:after {
+  width: 120px;
+  height: 120px;
+}
+
+.anki_coaster .omoshiro .coaster__list__item a.is-c_red:after {
+  border: 3px solid #F27070;
+  background: #FC9F9A;
+}
+
+.anki_coaster .omoshiro .coaster__list__item a.is-c_yellow:after {
+  border: 3px solid #DDCB45;
+  background: #FFF97D;
+}
+
+.anki_coaster .omoshiro .coaster__list__item a.is-c_orange:after {
+  border: 3px solid #EAAC59;
+  background: #FFD399;
+}
+
+.anki_coaster .omoshiro .coaster__list__item a.is-c_green:after {
+  border: 3px solid #64D25A;
+  background: #AEFAA0;
+}
+
+.anki_coaster .omoshiro .coaster__list__item a.is-c_blue:after {
+  border: 3px solid #42B9EA;
+  background: #92EAFF;
+}
+
+.anki_coaster .omoshiro .coaster__list__item a.is-c_purple:after {
+  border: 3px solid #9F90D6;
+  background: #CEBAFB;
+}
+
+.anki_coaster .omoshiro .coaster__list--item01 {
+  position: absolute;
+  top: 160px;
+  left: 90px;
+}
+
+.anki_coaster .omoshiro .coaster__list--item01 .is-s_m {
+  -webkit-transform: translate(3px, -12px);
+      -ms-transform: translate(3px, -12px);
+          transform: translate(3px, -12px);
+}
+
+.anki_coaster .omoshiro .coaster__list--item01 .is-s_l {
+  -webkit-transform: translate(8px, -21px);
+      -ms-transform: translate(8px, -21px);
+          transform: translate(8px, -21px);
+}
+
+.anki_coaster .omoshiro .coaster__list--item01 .is-s_x {
+  -webkit-transform: translate(15px, -30px);
+      -ms-transform: translate(15px, -30px);
+          transform: translate(15px, -30px);
+}
+
+.anki_coaster .omoshiro .coaster__list--item02 {
+  position: absolute;
+  top: 50px;
+  left: 155px;
+}
+
+.anki_coaster .omoshiro .coaster__list--item02 .is-s_m {
+  -webkit-transform: translate(-10px, 10px);
+      -ms-transform: translate(-10px, 10px);
+          transform: translate(-10px, 10px);
+}
+
+.anki_coaster .omoshiro .coaster__list--item02 .is-s_l {
+  -webkit-transform: translate(-15px, 17px);
+      -ms-transform: translate(-15px, 17px);
+          transform: translate(-15px, 17px);
+}
+
+.anki_coaster .omoshiro .coaster__list--item02 .is-s_x {
+  -webkit-transform: translate(-20px, 27px);
+      -ms-transform: translate(-20px, 27px);
+          transform: translate(-20px, 27px);
+}
+
+.anki_coaster .omoshiro .coaster__list--item03 {
+  position: absolute;
+  top: 117px;
+  left: 278px;
+}
+
+.anki_coaster .omoshiro .coaster__list--item03 .is-s_m {
+  -webkit-transform: translate(-9px, 8px);
+      -ms-transform: translate(-9px, 8px);
+          transform: translate(-9px, 8px);
+}
+
+.anki_coaster .omoshiro .coaster__list--item03 .is-s_l {
+  -webkit-transform: translate(-17px, 15px);
+      -ms-transform: translate(-17px, 15px);
+          transform: translate(-17px, 15px);
+}
+
+.anki_coaster .omoshiro .coaster__list--item03 .is-s_x {
+  -webkit-transform: translate(-25px, 22px);
+      -ms-transform: translate(-25px, 22px);
+          transform: translate(-25px, 22px);
+}
+
+.anki_coaster .omoshiro .coaster__list--item04 {
+  position: absolute;
+  top: 165px;
+  left: 410px;
+}
+
+.anki_coaster .omoshiro .coaster__list--item04 .is-s_m {
+  -webkit-transform: translate(1px, -12px);
+      -ms-transform: translate(1px, -12px);
+          transform: translate(1px, -12px);
+}
+
+.anki_coaster .omoshiro .coaster__list--item04 .is-s_l {
+  -webkit-transform: translate(2px, -21px);
+      -ms-transform: translate(2px, -21px);
+          transform: translate(2px, -21px);
+}
+
+.anki_coaster .omoshiro .coaster__list--item04 .is-s_x {
+  -webkit-transform: translate(0px, -30px);
+      -ms-transform: translate(0px, -30px);
+          transform: translate(0px, -30px);
+}
+
+.anki_coaster .omoshiro .coaster__list--item05 {
+  position: absolute;
+  top: 40px;
+  left: 535px;
+}
+
+.anki_coaster .omoshiro .coaster__list--item05 .is-s_m {
+  -webkit-transform: translate(5px, 13px);
+      -ms-transform: translate(5px, 13px);
+          transform: translate(5px, 13px);
+}
+
+.anki_coaster .omoshiro .coaster__list--item05 .is-s_l {
+  -webkit-transform: translate(8px, 22px);
+      -ms-transform: translate(8px, 22px);
+          transform: translate(8px, 22px);
+}
+
+.anki_coaster .omoshiro .coaster__list--item05 .is-s_x {
+  -webkit-transform: translate(14px, 31px);
+      -ms-transform: translate(14px, 31px);
+          transform: translate(14px, 31px);
+}
+
+.anki_coaster .omoshiro .coaster__list--item06 {
+  position: absolute;
+  top: 108px;
+  left: 700px;
+}
+
+.anki_coaster .omoshiro .coaster__list--item06 .is-s_m {
+  -webkit-transform: translate(2px, 12px);
+      -ms-transform: translate(2px, 12px);
+          transform: translate(2px, 12px);
+}
+
+.anki_coaster .omoshiro .coaster__list--item06 .is-s_l {
+  -webkit-transform: translate(2px, 22px);
+      -ms-transform: translate(2px, 22px);
+          transform: translate(2px, 22px);
+}
+
+.anki_coaster .omoshiro .coaster__list--item06 .is-s_x {
+  -webkit-transform: translate(1px, 32px);
+      -ms-transform: translate(1px, 32px);
+          transform: translate(1px, 32px);
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 500px;
+  padding: 35px;
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+  z-index: 0;
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  border: 6px solid #E84200;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.modal.is-yakudachi {
+  border: 6px solid #E84200;
+}
+
+.modal.is-omoshiro {
+  border: 6px solid #054BD6;
+}
+
+.modal.is-show {
+  opacity: 1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  z-index: 10000;
+}
+
+.modal__ttl {
+  font-weight: bold;
+  margin: 0 0 15px;
+}
+
+.is-yakudachi .modal__ttl {
+  color: #E84200;
+}
+
+.is-omoshiro .modal__ttl {
+  color: #054BD6;
+}
+
+.modal__ttl span {
+  color: #fff;
+  border-radius: 3px;
+  display: inline-block;
+  margin: 0 7px 0 0;
+  padding: 0 7px;
+}
+
+.is-yakudachi .modal__ttl span {
+  background: #E84200;
+}
+
+.is-omoshiro .modal__ttl span {
+  background: #054BD6;
+}
+
+.modal__close {
+  position: absolute;
+  top: -25px;
+  right: -25px;
+  display: block;
+}
+
+@-webkit-keyframes omoshiro_bg {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -1233px 0;
+  }
+}
+
+@keyframes omoshiro_bg {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -1233px 0;
+  }
+}
+
+@keyframes omoshiro_bg {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -2313px 0;
+  }
+}
+
+@-webkit-keyframes go {
+  0% {
+    right: 0px;
+  }
+  20% {
+    right: 0;
+    -webkit-transform: translateY(-50%) rotate(0deg);
+            transform: translateY(-50%) rotate(0deg);
+  }
+  40% {
+    right: 0;
+    -webkit-transform: translateY(-50%) rotate(0deg);
+            transform: translateY(-50%) rotate(0deg);
+  }
+  70% {
+    right: 30px;
+    -webkit-transform: translateY(-50%) rotate(0deg);
+            transform: translateY(-50%) rotate(0deg);
+  }
+  100% {
+    right: -150px;
+    -webkit-transform: translateY(-50%) rotate(0deg);
+            transform: translateY(-50%) rotate(0deg);
+  }
+}
+
+@keyframes go {
+  0% {
+    right: 0px;
+  }
+  20% {
+    right: 0;
+    -webkit-transform: translateY(-50%) rotate(0deg);
+            transform: translateY(-50%) rotate(0deg);
+  }
+  40% {
+    right: 0;
+    -webkit-transform: translateY(-50%) rotate(0deg);
+            transform: translateY(-50%) rotate(0deg);
+  }
+  70% {
+    right: 30px;
+    -webkit-transform: translateY(-50%) rotate(0deg);
+            transform: translateY(-50%) rotate(0deg);
+  }
+  100% {
+    right: -150px;
+    -webkit-transform: translateY(-50%) rotate(0deg);
+            transform: translateY(-50%) rotate(0deg);
+  }
+}
+
+@-webkit-keyframes kanban {
+  0% {
+    -webkit-transform: perspective(600px) rotateX(180deg);
+            transform: perspective(600px) rotateX(180deg);
+  }
+  100% {
+    -webkit-transform: perspective(600px) rotateX(0deg);
+            transform: perspective(600px) rotateX(0deg);
+  }
+}
+
+@keyframes kanban {
+  0% {
+    -webkit-transform: perspective(600px) rotateX(180deg);
+            transform: perspective(600px) rotateX(180deg);
+  }
+  100% {
+    -webkit-transform: perspective(600px) rotateX(0deg);
+            transform: perspective(600px) rotateX(0deg);
+  }
+}
+
+@-webkit-keyframes arrow_in_y {
+  0% {
+    -webkit-transform: translateX(150px) translateY(-50%) rotate(1080deg);
+            transform: translateX(150px) translateY(-50%) rotate(1080deg);
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  }
+  100% {
+    -webkit-transform: translateX(0) translateY(-50%) rotate(-20deg);
+            transform: translateX(0) translateY(-50%) rotate(-20deg);
+    opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  }
+}
+
+@keyframes arrow_in_y {
+  0% {
+    -webkit-transform: translateX(150px) translateY(-50%) rotate(1080deg);
+            transform: translateX(150px) translateY(-50%) rotate(1080deg);
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  }
+  100% {
+    -webkit-transform: translateX(0) translateY(-50%) rotate(-20deg);
+            transform: translateX(0) translateY(-50%) rotate(-20deg);
+    opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  }
+}
+
+@-webkit-keyframes arrow_in_o {
+  0% {
+    -webkit-transform: translateX(150px) translateY(-50%) rotate(1080deg);
+            transform: translateX(150px) translateY(-50%) rotate(1080deg);
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  }
+  100% {
+    -webkit-transform: translateX(0) translateY(-50%) rotate(11deg);
+            transform: translateX(0) translateY(-50%) rotate(11deg);
+    opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  }
+}
+
+@keyframes arrow_in_o {
+  0% {
+    -webkit-transform: translateX(150px) translateY(-50%) rotate(1080deg);
+            transform: translateX(150px) translateY(-50%) rotate(1080deg);
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  }
+  100% {
+    -webkit-transform: translateX(0) translateY(-50%) rotate(11deg);
+            transform: translateX(0) translateY(-50%) rotate(11deg);
+    opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  }
+}
+
+@-webkit-keyframes bounce {
+  0% {
+    -webkit-transform: translateY(0px) scale(1, 1);
+            transform: translateY(0px) scale(1, 1);
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  }
+  40% {
+    -webkit-transform: translateY(-20px) scale(1.2, 0.8);
+            transform: translateY(-20px) scale(1.2, 0.8);
+  }
+  80% {
+    -webkit-transform: translateY(0px) scale(0.9, 1);
+            transform: translateY(0px) scale(0.9, 1);
+  }
+  100% {
+    -webkit-transform: translateY(0px) scale(1, 1);
+            transform: translateY(0px) scale(1, 1);
+  }
+}
+
+@keyframes bounce {
+  0% {
+    -webkit-transform: translateY(0px) scale(1, 1);
+            transform: translateY(0px) scale(1, 1);
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  }
+  40% {
+    -webkit-transform: translateY(-20px) scale(1.2, 0.8);
+            transform: translateY(-20px) scale(1.2, 0.8);
+  }
+  80% {
+    -webkit-transform: translateY(0px) scale(0.9, 1);
+            transform: translateY(0px) scale(0.9, 1);
+  }
+  100% {
+    -webkit-transform: translateY(0px) scale(1, 1);
+            transform: translateY(0px) scale(1, 1);
+  }
+}
+
+/*
+@keyframes float_f {
+  0%   {transform: translateY(3px);}
+  50%  {transform: translateY(-3px);}
+  100% {transform: translateY(3px);}
+}
+@keyframes float_l {
+  0%   {transform: translateY(-3px);}
+  50%  {transform: translateY(3px);}
+  100% {transform: translateY(-3px);}
+}
+*/

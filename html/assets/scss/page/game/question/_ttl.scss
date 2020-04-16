@@ -1,0 +1,36 @@
+//--------------------------------
+// 問題部分ベース
+//--------------------------------
+
+
+//問題文部分
+.question__ttl{
+  position: relative;
+  height: 178px;
+  padding: 16px;
+  background: $baseBlack;
+  color: #fff;
+}
+
+.question__ttl-txt{
+  position: relative;
+  float: left;
+  //background: #fff;
+  height: 100%;
+  width: 840px;
+  margin-left: 32px;
+
+  h1{
+    @include relPosition(50%,50%);
+    transform: translate(-50%,-50%);
+    @include fontsize(30);
+    font-weight: bold;
+  }
+
+}
+
+.question__ttl-waypoint{
+  color: #7AD0FA;
+  font-weight: bold;
+  @include absPosition(24px,48px);
+}

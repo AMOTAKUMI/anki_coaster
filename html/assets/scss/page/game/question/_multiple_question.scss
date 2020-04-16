@@ -1,0 +1,41 @@
+//--------------------------------
+// 問題部分ベース
+//--------------------------------
+
+.multiple_question{
+  @include absPosition(0,0);
+  width: 100%;
+  z-index:1;
+  //display: none;
+
+  &.is-hidden{ display: none;}
+
+
+  &__next{
+    @include absPosition(null,null,32px,32px);
+  }
+
+}
+
+//問題文部分
+.question__ttl-slide{
+  position: relative;
+  height: 360px;
+  //background: #fff;
+  background: url(#{$rootDir}/assets/img/game/question/answer_bg.png)no-repeat;
+  @include fontsize(28);
+  font-weight: bold;
+  line-height: 1.6;
+  padding: 32px;
+}
+
+
+//隣接セレクタで後ろに重なるアンサーを見えなくする
+.multiple_question + .question__answer{
+  display: none;
+}
+
+//復帰
+.multiple_question.is-hidden + .question__answer{
+  display: block;
+}

@@ -1,0 +1,18 @@
+.tower_top{
+  height: 550px;
+  background: url(#{$rootDir}/assets/img/tower/common/tower_mainbg.jpg);
+}
+
+.tower_top__ttl{
+  padding: 12px;
+}
+
+
+.tofloor{
+  width: 510px;
+  @include absPosition(32px,null,null,32px);
+
+  .is-3f{ margin-top: 15px; }
+  .is-2f{ margin-top: 27px; }
+  .is-1f{ margin-top: 31px; }
+}

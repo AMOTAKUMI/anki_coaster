@@ -1,0 +1,26 @@
+/* ==========================================================================
+	タイポグラフィ
+========================================================================== */
+
+//汎用本文
+.c-bodytxt {
+  @include fontsize(16);
+  line-height: 1.7;
+}
+
+//bodyで指定するかも
+.c-caption {
+  @include fontsize(13);
+  line-height: 1.6;
+}
+
+.c-name {
+  @include fontsize(14);
+  line-height: 1.6;
+}
+
+//汎用強調
+.c-str{
+  font-style: normal;
+  font-weight: bold;
+}

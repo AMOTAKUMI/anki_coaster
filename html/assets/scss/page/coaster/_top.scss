@@ -1,0 +1,454 @@
+body{
+    width:100%;
+    height:100%;
+    position:relative;
+}
+.anki_coaster{
+    float: left;
+    width: 1062px;
+    padding: 0 0 0 30px;
+    .yakudachi{
+      width:100%;
+      height:260px;
+      overflow:hidden;
+      margin:0 0 33px;
+      position:relative;
+      &::before{
+          content:"";
+          @include absPosition($top: 0, $left: 0, $bottom: null, $right: null);
+          background:url(../../../img/coaster/bg_yakudachi.png) 0 0;
+          width:1233px;
+          height: 100%;
+          animation: omoshiro_bg 200s linear infinite;
+      }
+      &__go{
+          @include absPosition($top: 50%, $left: null, $bottom: null, $right: 0);
+          transform:translateY(-50%) rotate(-20deg);
+          transform-origin: center;
+          z-index:3;
+          animation: arrow_in_y 1s cubic-bezier(0, 0, 0.1, 1.0) 1;
+          &.is-start{animation: go 1.2s ease 1 forwards;}
+      }
+      &__btn{
+          @include absPosition($top: 10px, $left: null, $bottom: null, $right: 10px);
+          color:#fff;
+          font-family: 'Play', sans-serif;
+          font-weight: 700;
+          @include fontsize(14);
+          white-space: nowrap;
+          z-index:3;
+          li{
+              width:80px;
+              height:30px;
+              padding:0 10px;
+              line-height: 30px;
+              color:#fff;
+              background: rgba(0,0,0,.7);
+              border-radius:3px;
+          }
+          &__start{
+              @include absPosition($top: 0, $left: null, $bottom: null, $right: 0);
+              opacity:0;
+              display:none;
+              &.is-show{
+                  opacity:1;
+                  display:block;
+              }
+              i{
+                  padding:0 5px 0 0;
+              }
+          }
+          &__stop{
+              @include absPosition($top: 0, $left: null, $bottom: null, $right: 0);
+              opacity:0;
+              display:none;
+              &.is-show{
+                  opacity:1;
+                  display:block;
+              }
+              i{
+                  padding:0 5px 0 0;
+              }
+          }
+      }
+      &__inner{
+          height:280px;
+          overflow:hidden;
+          &.is-scroll{
+              overflow:scroll;
+          }
+      }
+      .coaster{
+          height:100%;
+          &__inner{
+              z-index:1;
+              position: relative;
+              height: 100%;
+              float:left;
+          }
+          &__ttl{
+              width:252px;
+              height:100%;
+              float:left;
+              position:relative;
+              &::before{
+                  content:"";
+                  width:252px;
+                  height:137px;
+                  background:url(../../../img/coaster/yakudachi_ico.png) 0 0 no-repeat;
+                  @include absPosition($top: 0, $left: 0, $bottom: null, $right: null);
+                  transform-origin: top;
+                  animation: kanban 1s ease 1;
+              }
+          }
+          &__list{
+              width:845px;
+              height:100%;
+              float:left;
+              position:relative;
+              background:url(../../../img/coaster/bg_yakudachi_course.png) 0 0 no-repeat;
+              &__item{
+                  display:inline-block;
+                  @include fontsize(14);
+                  font-weight: bold;
+                  line-height: 20px;
+                  text-align: center;
+                  opacity:0;
+                  &.is-show {
+                      opacity: 1;
+                      animation: bounce .4s ease-out 1;
+                      //干渉するので消してます
+                      //&.is-fast a{animation: float_f 2s linear infinite;}
+                      //&.is-late a{animation: float_l 3s linear infinite;}
+                  }
+                  a{
+                       display:inline-block;
+                       position: relative;
+                       span{
+                           position: relative;
+                           z-index:1;
+                       }
+                       &::after{
+                          content:"";
+                          display:block;
+                          border-radius: 10000px;
+                          @include absPosition($top: 50%, $left: 50%, $bottom: null, $right: null);
+                          transform:translate(-50%, -50%);
+                          box-shadow: 0 0 10px rgba(0,0,0,.7);
+                       }
+                       &.is-s_s::after{width:60px;height:60px;}
+                       &.is-s_m::after{width:80px;height:80px;}
+                       &.is-s_l::after{width:100px;height:100px;}
+                       &.is-s_x::after{width:120px;height:120px;}
+                       &.is-c_red::after{   border:3px solid #F27070;background:#FC9F9A;}
+                       &.is-c_yellow::after{border:3px solid #DDCB45;background:#FFF97D;}
+                       &.is-c_orange::after{border:3px solid #EAAC59;background:#FFD399;}
+                       &.is-c_green::after{ border:3px solid #64D25A;background:#AEFAA0;}
+                       &.is-c_blue::after{  border:3px solid #42B9EA;background:#92EAFF;}
+                       &.is-c_purple::after{border:3px solid #9F90D6;background:#CEBAFB;}
+                  }
+              }
+              &--item01{
+                  @include absPosition($top: 110px, $left: 65px, $bottom: null, $right: null);
+                  .is-s_m{transform: translate(-3px, -12px);}
+                  .is-s_l{transform: translate(-12px, -18px);}
+                  .is-s_x{transform: translate(-20px, -22px);}
+              }
+              &--item02{
+                  @include absPosition($top: 35px, $left: 245px, $bottom: null, $right: null);
+                  .is-s_m{transform: translate(3px, -10px);}
+                  .is-s_l{transform: translate(1px, -19px);}
+                  .is-s_x{transform: translate(8px, -28px);}
+              }
+              &--item03{
+                  @include absPosition($top: 110px, $left: 385px, $bottom: null, $right: null);
+                  .is-s_m{transform: translate(9px, -4px);}
+                  .is-s_l{transform: translate(13px, -16px);}
+                  .is-s_x{transform: translate(20px, -23px);}
+              }
+              &--item04{
+                  @include absPosition($top: 125px, $left: 480px, $bottom: null, $right: null);
+                  .is-s_m{transform: translate(0px, -15px);}
+                  .is-s_l{transform: translate(-7px, -22px);}
+                  .is-s_x{transform: translate(-14px, -31px);}
+              }
+              &--item05{
+                  @include absPosition($top: 87px, $left: 648px, $bottom: null, $right: null);
+                  .is-s_m{transform: translate(3px, -10px);}
+                  .is-s_l{transform: translate(5px, -19px);}
+                  .is-s_x{transform: translate(14px, -28px);}
+              }
+              &--item06{
+                  @include absPosition($top: 150px, $left: 758px, $bottom: null, $right: null);
+                  .is-s_m{transform: translate(3px, -12px);}
+                  .is-s_l{transform: translate(8px, -21px);}
+                  .is-s_x{transform: translate(15px, -30px);}
+              }
+          }
+      }
+    }
+    .omoshiro{
+       width:100%;
+       height:260px;
+       overflow:hidden;
+       position:relative;
+       &::before{
+           content:"";
+           @include absPosition($top: 0, $left: 0, $bottom: null, $right: null);
+           background:url(../../../img/coaster/bg_omoshiro.png) 0 0;
+           width:2312px;
+           height: 100%;
+           animation: omoshiro_bg 200s linear infinite;
+       }
+       &__go{
+           @include absPosition($top: 50%, $left: null, $bottom: null, $right: 0);
+           transform:translateY(-50%) rotate(9deg);
+           transform-origin: center;
+           z-index:3;
+           animation: arrow_in_o 1s cubic-bezier(0, 0, 0.1, 1.0) 1;
+           &.is-start{animation: go 1.2s ease 1 forwards;}
+       }
+       &__btn{
+           @include absPosition($top: 10px, $left: null, $bottom: null, $right: 10px);
+           font-family: 'Play', sans-serif;
+           font-weight: 700;
+           @include fontsize(14);
+           white-space: nowrap;
+           z-index:3;
+           li{
+               width:80px;
+               height:30px;
+               padding:0 10px;
+               line-height: 30px;
+               color:#fff;
+               background: rgba(0,0,0,.7);
+               border-radius:3px;
+           }
+           &__start{
+               @include absPosition($top: 0, $left: null, $bottom: null, $right: 0);
+               opacity:0;
+               display:none;
+               &.is-show{
+                   opacity:1;
+                   display:block;
+               }
+               i{
+                   padding:0 5px 0 0;
+               }
+           }
+           &__stop{
+               @include absPosition($top: 0, $left: null, $bottom: null, $right: 0);
+               opacity:0;
+               display:none;
+               &.is-show{
+                   opacity:1;
+                   display:block;
+               }
+               i{
+                   padding:0 5px 0 0;
+               }
+           }
+       }
+       &__inner{
+           height:280px;
+           overflow:hidden;
+           &.is-scroll{
+               overflow:scroll;
+           }
+       }
+       .coaster{
+           height:100%;
+           &__inner{
+               z-index:1;
+               position: relative;
+               height: 100%;
+               float:left;
+           }
+           &__ttl{
+               width:252px;
+               height:100%;
+               float:left;
+               position: relative;
+               &::before{
+                   content:"";
+                   width:252px;
+                   height:137px;
+                   background:url(../../../img/coaster/omoshiro_ico.png) 0 0 no-repeat;
+                   @include absPosition($top: 0, $left: 0, $bottom: null, $right: null);
+                   transform-origin: top;
+                   animation: kanban 1s ease 1;
+               }
+           }
+           &__list{
+               width:845px;
+               height:100%;
+               float:left;
+               position:relative;
+               background:url(../../../img/coaster/bg_omoshiro_course.png) 0 0 no-repeat;
+               &__item{
+                   display:inline-block;
+                   @include fontsize(14);
+                   font-weight: bold;
+                   line-height: 20px;
+                   text-align: center;
+                   opacity:0;
+                   &.is-show {
+                       opacity: 1;
+                       animation: bounce .4s ease-out 1;
+                       //干渉するので消してます
+                       //&.is-fast a{animation: float_f 2s linear infinite;}
+                       //&.is-late a{animation: float_l 3s linear infinite;}
+                   }
+                   a{
+                        display:inline-block;
+                        position: relative;
+                        span{
+                            position: relative;
+                            z-index:1;
+                        }
+                        &::after{
+                           content:"";
+                           display:block;
+                           border-radius: 10000px;
+                           @include absPosition($top: 50%, $left: 50%, $bottom: null, $right: null);
+                           transform:translate(-50%, -50%);
+                           box-shadow: 0 0 10px rgba(0,0,0,.7);
+                        }
+                        &.is-s_s::after{width:60px;height:60px;}
+                        &.is-s_m::after{width:80px;height:80px;}
+                        &.is-s_l::after{width:100px;height:100px;}
+                        &.is-s_x::after{width:120px;height:120px;}
+                        &.is-c_red::after{   border:3px solid #F27070;background:#FC9F9A;}
+                        &.is-c_yellow::after{border:3px solid #DDCB45;background:#FFF97D;}
+                        &.is-c_orange::after{border:3px solid #EAAC59;background:#FFD399;}
+                        &.is-c_green::after{ border:3px solid #64D25A;background:#AEFAA0;}
+                        &.is-c_blue::after{  border:3px solid #42B9EA;background:#92EAFF;}
+                        &.is-c_purple::after{border:3px solid #9F90D6;background:#CEBAFB;}
+                   }
+               }
+               &--item01{
+                   @include absPosition($top: 160px, $left: 90px, $bottom: null, $right: null);
+                   .is-s_m{transform: translate(3px, -12px);}
+                   .is-s_l{transform: translate(8px, -21px);}
+                   .is-s_x{transform: translate(15px, -30px);}
+               }
+               &--item02{
+                   @include absPosition($top: 50px, $left: 155px, $bottom: null, $right: null);
+                   .is-s_m{transform: translate(-10px, 10px);}
+                   .is-s_l{transform: translate(-15px, 17px);}
+                   .is-s_x{transform: translate(-20px, 27px);}
+               }
+               &--item03{
+                   @include absPosition($top: 117px, $left: 278px, $bottom: null, $right: null);
+                   .is-s_m{transform: translate(-9px, 8px);}
+                   .is-s_l{transform: translate(-17px, 15px);}
+                   .is-s_x{transform: translate(-25px, 22px);}
+               }
+               &--item04{
+                   @include absPosition($top: 165px, $left: 410px, $bottom: null, $right: null);
+                   .is-s_m{transform: translate(1px, -12px);}
+                   .is-s_l{transform: translate(2px, -21px);}
+                   .is-s_x{transform: translate(0px, -30px);}
+               }
+               &--item05{
+                   @include absPosition($top: 40px, $left: 535px, $bottom: null, $right: null);
+                   .is-s_m{transform: translate(5px, 13px);}
+                   .is-s_l{transform: translate(8px, 22px);}
+                   .is-s_x{transform: translate(14px, 31px);}
+               }
+               &--item06{
+                   @include absPosition($top: 108px, $left: 700px, $bottom: null, $right: null);
+                   .is-s_m{transform: translate(2px, 12px);}
+                   .is-s_l{transform: translate(2px, 22px);}
+                   .is-s_x{transform: translate(1px, 32px);}
+               }
+           }
+       }
+    }
+}
+
+.modal{
+    @include absPosition($top: 50%, $left: 50%, $bottom: null, $right: null);
+    transform:translate(-50%, -50%);
+    width:500px;
+    padding:35px;
+    background:#fff;
+    box-shadow: 0 0 10px rgba(0,0,0,.7);
+    z-index:0;
+    opacity:0;
+    border:6px solid #E84200;
+    &.is-yakudachi {border:6px solid #E84200;}
+    &.is-omoshiro  {border:6px solid #054BD6;}
+    @include cmn-transition($default-speed:0.3s);
+    &.is-show{
+        opacity:1;
+        z-index:10000;
+    }
+    &__ttl{
+        font-weight: bold;
+        margin:0 0 15px;
+        .is-yakudachi &{color:#E84200;}
+        .is-omoshiro  &{color:#054BD6;}
+        span{
+            color:#fff;
+            border-radius: 3px;
+            display: inline-block;
+            margin:0 7px 0 0;
+            padding:0 7px;
+            .is-yakudachi &{background:#E84200;}
+            .is-omoshiro  &{background:#054BD6;}
+        }
+    }
+    &__txt{
+    }
+    &__close{
+        @include absPosition($top: -25px, $left: null, $bottom: null, $right: -25px);
+        display:block;
+    }
+}
+
+@keyframes omoshiro_bg {
+  0%   {background-position: 0 0;}
+  100% {background-position: -1233px 0;}
+}
+@keyframes omoshiro_bg {
+  0%   {background-position: 0 0;}
+  100% {background-position: -2313px 0;}
+}
+@keyframes go {
+  0%   {right:0px;}
+  20%  {right:0;transform:translateY(-50%) rotate(0deg);}
+  40%  {right:0;transform:translateY(-50%) rotate(0deg);}
+  70%  {right:30px;transform:translateY(-50%) rotate(0deg);}
+  100% {right:-150px;transform:translateY(-50%) rotate(0deg);}
+}
+@keyframes kanban {
+  0%   {transform:perspective(600px) rotateX(180deg);}
+  100% {transform:perspective(600px) rotateX(0deg);}
+}
+@keyframes arrow_in_y {
+  0%   {transform:translateX(150px) translateY(-50%) rotate(1080deg);opacity:0;}
+  100% {transform:translateX(0) translateY(-50%) rotate(-20deg);opacity:1;}
+}
+@keyframes arrow_in_o {
+  0%   {transform:translateX(150px) translateY(-50%) rotate(1080deg);opacity:0;}
+  100% {transform:translateX(0) translateY(-50%) rotate(11deg);opacity:1;}
+}
+@keyframes bounce {
+  0% {  transform: translateY(0px) scale(1, 1);opacity:0;}
+  40% { transform: translateY(-20px) scale(1.2, 0.8);}
+  80% { transform: translateY(0px) scale(0.9, 1);}
+  100% {transform: translateY(0px) scale(1, 1);}
+}
+/*
+@keyframes float_f {
+  0%   {transform: translateY(3px);}
+  50%  {transform: translateY(-3px);}
+  100% {transform: translateY(3px);}
+}
+@keyframes float_l {
+  0%   {transform: translateY(-3px);}
+  50%  {transform: translateY(3px);}
+  100% {transform: translateY(-3px);}
+}
+*/

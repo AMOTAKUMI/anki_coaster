@@ -1,0 +1,15 @@
+[{
+    "tower":{
+      "csv_file":{
+        "1":"tower/tower01.csv",
+        "2":"tower/tower02.csv",
+        "3":"tower/tower03.csv"
+      },
+      "assets":{
+        "1":"../assets/img/tower/question/1f/",
+        "2":"../assets/img/tower/question/1f/",
+        "3":"../assets/img/tower/question/1f/"
+      },
+      "dummy_answer":"mania/dummy.csv"
+    }
+}]

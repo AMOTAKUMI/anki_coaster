@@ -1,0 +1,14 @@
+.l-gnav{
+
+}
+
+.l-gnav_menu{
+  padding-top: 8px;
+
+    &__item{
+      float: left;
+      margin-left: 30px;
+      color: #fff;
+      @include fontsize(18);
+    }
+}

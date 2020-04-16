@@ -1,0 +1,32 @@
+
+
+//問題文部分
+.question__time{
+  position: relative;
+  width: 128px;
+  height: 128px;
+  float: left;
+  margin-top: 12px;
+  
+  //ルート相対使いたいが…
+  background: url(#{$rootDir}/assets/img/game/question/time_bg.png)no-repeat;
+
+
+  .second_hand{
+    @include absPosition(16px,52px);
+    display: block;
+    width: 24px;
+    height: 63px;
+    background: url(#{$rootDir}/assets/img/game/question/second_hand.png)no-repeat;
+
+    &.is-anim{
+      transform-origin:50% 78.5%;
+      animation: second_hand 10s linear 0s;
+    }
+  }
+}
+
+@keyframes second_hand {
+    0%{transform: rotate(0deg);}
+    100%{transform: rotate(360deg);}
+}

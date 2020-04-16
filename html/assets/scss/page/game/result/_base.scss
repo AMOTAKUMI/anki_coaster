@@ -1,0 +1,61 @@
+.result__cont{
+  height: 551px;
+  background: rgba(255,255,255,.5);
+  display: none;
+
+  &.is-active{
+    display: block;
+  }
+}
+
+.result__cont-inner{
+  position: relative;
+  padding: 32px;
+}
+
+.result__cont-ch{
+  @include absPosition(null,null,-36px,-24px);
+}
+
+.advice{
+  position: relative;
+  float: left;
+  width: 660px;
+
+  &__serif{
+    position: relative;
+    width: 454px;
+    height: 285px;
+    margin-left: 24px;
+    @include fontsize(23);
+  }
+}
+
+
+.result__nav{
+  width: 466px;
+  margin-top: 24px;
+  text-align: right;
+  a{ display: inline-block;}
+
+  &-commentary{
+    position: relative;
+    background: $baseBlack;
+    padding: 6px 32px;
+    border-radius:4px;
+    font-weight: bold;
+    margin-left: 16px;
+    @include fontsize(16);
+    color: #fff;
+    &:after{
+      @include absPosition(11px,null,null,12px);
+      content: '';
+      width: 9px;
+      height: 14px;
+      display: block;
+      background: url(#{$rootDir}/assets/img/common/icon/arw_r.png)no-repeat;
+    }
+  }
+
+
+}

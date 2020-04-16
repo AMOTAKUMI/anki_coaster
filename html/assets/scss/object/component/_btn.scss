@@ -1,0 +1,27 @@
+/* ==========================================================================
+	ボタン
+========================================================================== */
+
+.c-backbtn{
+  text-decoration: underline;
+  @include fontsize(14);
+  &:before{
+    position: relative;
+    content: '';
+    width: 22px;
+    height: 22px;
+    display: inline-block;
+    top: 6px;
+    margin-right: .5em;
+    background: url(#{$rootDir}/assets/img/common/icon/back.png)no-repeat;
+  }
+  
+  &.is-bkbg{
+    color: #fff;
+    &:before{
+      background: url(#{$rootDir}/assets/img/common/icon/back_wh.png)no-repeat;
+    }
+  }
+
+
+}

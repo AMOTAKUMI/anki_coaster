@@ -1,0 +1,47 @@
+//--------------------------------
+// 問題部分ベース
+//--------------------------------
+
+
+.question__answer{
+  padding-bottom: 24px;
+  background: url(#{$rootDir}/assets/img/game/question/answer_bg.png)no-repeat;
+}
+
+.question__answer-item{
+  transition: all 0.25s ease;
+  position: relative;
+  cursor: pointer;
+  z-index: 0;
+  width: 328px;
+  height: 144px;
+  float: left;
+  margin: 24px 0 0 24px;
+  backface-visibility: hidden;
+  overflow:hidden;
+
+  background: url(#{$rootDir}/assets/img/game/question/answerbtn.png)no-repeat;
+
+  &.is-hint{background: url(#{$rootDir}/assets/img/game/question/answerbtn_hint.png)no-repeat;}
+
+  //アニメーションラフ
+  &.is-clicked{
+    transform: perspective(500px) rotateX(90deg);
+    perspective: 500px;
+    transform-origin: center bottom;
+  }
+
+
+  &_inner{
+    @include relPosition(50%,50%);
+    transform: translate(-50%,-50%);
+    @include fontsize(28);
+    text-align: center;
+    font-weight: bold;
+    img{
+      max-height: 136px;
+    }
+  }
+
+}
+

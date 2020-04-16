@@ -1,0 +1,13 @@
+.l-main{
+  width: 1280px;
+  margin: 0 auto;
+  min-height: 663px;
+  background: url(../../../../../assets/img/common/park_bg.jpg);
+  background-size: 100%;
+  background-attachment: fixed;
+
+  //ヘッダーはpaddingナシのため必要
+  &__inner{
+    padding: 32px;
+  }
+}

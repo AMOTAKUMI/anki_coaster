@@ -1,0 +1,25 @@
+//--------------------------------
+// 問題部分ベース
+//--------------------------------
+
+//問題ブロック
+.question{
+  position: relative;
+  display: none;
+  //問題を出すのはどんどんis-activeにしていく形で
+  &.is-active{ display: block;}
+}
+
+.question__waypoint{
+  background-color: #fff;
+}
+
+.question__skip{
+  margin-top: 58px;
+  cursor: pointer;
+}
+
+.question__close{
+  @include absPosition(-16px,null,null,-16px);
+  z-index: $zLayer6;
+}

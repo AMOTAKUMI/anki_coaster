@@ -1,0 +1,59 @@
+.tower_result{
+  background: rgba(255,255,255,.5);
+
+  &__continner{
+
+  }
+
+}
+
+.tower_result__collectanswer{
+  height: 160px;
+  background: #3DACDA;
+  padding: 60px 32px 0px;
+}
+
+.tower_result__waypoint{
+  color: #fff;
+  font-weight: bold;
+  @include absPosition(24px,32px);
+}
+
+.tower_result__score-pic{
+  float: left;
+}
+
+.tower_result__score-txt{
+  @include fontsize(70);
+  line-height: 1;
+  font-weight: bold;
+  color: #fff;
+  margin-left: 16px;
+  float: left;
+}
+
+
+
+.tower_result__haradon{
+  @include absPosition(null,null,0,16px);
+}
+
+
+.tower_result__advice{
+  position: relative;
+  height:390px;
+  padding: 32px;
+}
+
+.tower_result__message{
+  width: 826px;
+  height: 330px;
+  @include fontsize(23);
+
+  &-btn{
+    display: block;
+    margin: 16px auto;
+    width: 350px;
+  }
+
+}

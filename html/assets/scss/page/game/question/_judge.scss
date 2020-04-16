@@ -1,0 +1,10 @@
+//問題文部分
+.judge{
+  @include absPosition(110px,300px);
+  width: 472px;
+  height: 472px;
+  display: none;
+
+
+  &.is-active{ display: block;}
+}

@@ -1,0 +1,58 @@
+.commentary{
+  position: relative;
+  height: 551px;
+
+  display: none;
+  &.is-active{ display: block;}
+}
+
+//色
+.is-true{ color: #FF7D7D;}
+.is-false{ color: #64C8FF;}
+
+.commentary__head{
+  background: $baseBlack;
+  height: 60px;
+  padding: 16px;
+
+  &-backbtn{
+    @include absPosition(16px,null,null,30px);
+  }
+
+}
+
+.commentary__body{
+  position: relative;
+  overflow: scroll;
+
+  //overflow-scrollingするとカスタマイズが効かなくなる
+  //-webkit-overflow-scrolling: touch;
+  height: 491px;
+  background: rgba(255,255,255,.5);
+  padding: 32px;
+}
+
+
+.commentary__answer{
+  border-top:1px solid #ccc;
+  padding: 16px 0;
+  @include fontsize(20);
+  line-height: 1.75;
+  font-weight: bold;
+
+  &:first-child{ padding-top: 0; border-top:none;}
+
+
+  &-ttl{ font-weight: bold;}
+
+  &-collect{ padding-left: 32px; }
+
+  &-commentary{
+    padding-left: 32px;
+    font-weight: normal;
+    @include fontsize(16);
+    line-height: 1.6;
+    width: 800px; //todo:値検討
+  }
+
+}

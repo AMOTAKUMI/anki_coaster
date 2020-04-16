@@ -1,0 +1,31 @@
+
+.score{
+  position: relative;
+  height: 138px;
+  background: $baseBlack;
+  color: #fff;
+
+  &__ttl{
+    padding: 35px 0 0 70px;
+  }
+
+  &__point{
+    @include absPosition(0,null,null,127px);
+    width: 323px;
+    height: 138px;
+    background: url(#{$rootDir}/assets/img/game/result/score_bg.png)no-repeat;
+  }
+
+  &__point-num{
+    display: block;
+    @include fontsize(130);
+    font-weight: bold;
+    color: #FFF500;
+    line-height: 138px;
+    font-family: 'Helvetica',sans-serif;
+    text-align: right;
+    margin-right: 40px;
+    letter-spacing: 17px;
+  }
+
+}

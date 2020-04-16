@@ -1,0 +1,20 @@
+.l-cont{
+  position: relative;
+  margin-left: 16px;
+  width: 1086px;
+  float: left;
+
+  &.is-nomargin{
+    margin-left: 0;
+    width: 1062px;
+  }
+
+  &.is-full{
+    float: none;
+    margin-left: 0;
+    width: auto;
+  }
+  
+
+}
+

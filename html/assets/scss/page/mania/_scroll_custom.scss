@@ -1,0 +1,12 @@
+.customscroll-y{
+  overflow-y:auto;
+  overflow-x: hidden;
+  &::-webkit-scrollbar {
+    background: #eee;
+    width: 10px;
+  }
+  &::-webkit-scrollbar-thumb {
+    all:unset;
+    background: #2689da;
+  }
+}

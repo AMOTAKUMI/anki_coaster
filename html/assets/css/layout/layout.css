@@ -1,0 +1,49 @@
+.l-cont {
+  position: relative;
+  margin-left: 16px;
+  width: 1086px;
+  float: left;
+}
+
+.l-cont.is-nomargin {
+  margin-left: 0;
+  width: 1062px;
+}
+
+.l-cont.is-full {
+  float: none;
+  margin-left: 0;
+  width: auto;
+}
+
+.l-gnav_menu {
+  padding-top: 8px;
+}
+
+.l-gnav_menu__item {
+  float: left;
+  margin-left: 30px;
+  color: #fff;
+  font-size: 18px;
+  font-size: 1.125rem;
+}
+
+.l-header {
+  width: 1280px;
+  margin: 0 auto;
+  height: 48px;
+  background-color: #000;
+}
+
+.l-main {
+  width: 1280px;
+  margin: 0 auto;
+  min-height: 663px;
+  background: url(../../../../../assets/img/common/park_bg.jpg);
+  background-size: 100%;
+  background-attachment: fixed;
+}
+
+.l-main__inner {
+  padding: 32px;
+}
